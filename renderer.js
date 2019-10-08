@@ -1,0 +1,1 @@
+window.open('https://www.rongcloud.cn/','','width=1200,height=600')

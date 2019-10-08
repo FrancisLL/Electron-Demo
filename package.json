@@ -1,0 +1,49 @@
+{
+  "name": "electron-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "build": "electron-builder --win --mac --ia32"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^6.0.11",
+    "electron-builder": "^21.2.0",
+    "electron-packager": "^14.0.6"
+  },
+  "build": {
+    "appId": "ele-demo",
+    "productName": "ele-demo",
+    "directories": {
+      "output": "build"
+    },
+    "nsis": {
+      "oneClick": false, 
+      "allowToChangeInstallationDirectory": true, 
+      "installerIcon": "./build/icons/aaa.ico",
+      "uninstallerIcon": "./build/icons/bbb.ico",
+      "installerHeaderIcon": "./build/icons/aaa.ico", 
+      "createDesktopShortcut": true, 
+      "createStartMenuShortcut": true,
+      "shortcutName": "xxxx",
+      "include": "build/script/installer.nsh"
+    },
+    "mac": {
+      "icon":"imgs/app.icns",
+      "category": "demo"
+    },
+    "win": {
+      "icon": "imgs/app.png",
+      "target": [{
+        "target": "nsis",
+        "arch": [ "ia32"]
+      }]
+    }
+  }
+}
